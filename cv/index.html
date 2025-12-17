@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phan Nguyễn Duy Kha – CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #F5F5F5;
+            color: #1A1A1A;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 12px 24px;
+            background: #FF6A00;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-btn:hover {
+            background: #FF8533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+        }
+
+        @media print {
+            .back-btn {
+                display: none;
+            }
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 16mm 18mm;
+            margin: 20px auto;
+            background: #FFFFFF;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 8mm;
+            padding-bottom: 6mm;
+            border-bottom: none;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 130px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 4px solid #FF6A00;
+            box-shadow: 0 6px 20px rgba(255, 106, 0, 0.25);
+            flex-shrink: 0;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #FF6A00 0%, rgba(255, 106, 0, 0.3) 50%, transparent 100%);
+        }
+
+        .name {
+            font-size: 32pt;
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 2mm;
+            letter-spacing: -1px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .name-first {
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            color: #555555;
+            letter-spacing: 1px;
+        }
+
+        .name-highlight {
+            color: #FF6A00;
+            font-weight: 800;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .role {
+            font-size: 10.5pt;
+            font-weight: 500;
+            color: #444444;
+            margin-bottom: 3mm;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+        }
+
+        .role-divider {
+            color: #FF6A00;
+            margin: 0 4px;
+            font-weight: 300;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4mm;
+            font-size: 8.5pt;
+            color: #555555;
+            font-weight: 400;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .contact-icon {
+            width: 12px;
+            height: 12px;
+            color: #FF6A00;
+            flex-shrink: 0;
+        }
+
+        /* Two-column layout */
+        .container {
+            display: flex;
+            gap: 0;
+            align-items: stretch;
+            margin: 0 -18mm;
+            margin-bottom: -16mm;
+        }
+
+        .left-column {
+            width: 35%;
+            flex-shrink: 0;
+            padding: 0 6mm 20mm 18mm;
+            background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+        }
+
+        .right-column {
+            width: 65%;
+            flex-shrink: 0;
+            padding: 0 18mm 20mm 8mm;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 6mm;
+        }
+
+        .left-column .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1A1A1A;
+            margin-bottom: 4mm;
+            position: relative;
+            padding-bottom: 2mm;
+        }
+
+        .left-column .section-title {
+            font-size: 10pt;
+            color: #FF6A00;
+            border-bottom: 2px solid #FF6A00;
+            padding-bottom: 1.5mm;
+        }
+
+        .right-column .section-title {
+            border-bottom: 2px solid #1A1A1A;
+        }
+
+        /* Left column sections */
+        .skill-group {
+            margin-bottom: 4mm;
+            padding-left: 3mm;
+            border-left: 2px solid #FFE5D6;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-name {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #FF6A00;
+            margin-bottom: 2mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 9pt;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-list li {
+            font-size: 8.5pt;
+            color: #444444;
+            margin-bottom: 1.5mm;
+            padding-left: 10px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #FF6A00;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .tools-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2mm;
+        }
+
+        .tool-item {
+            font-size: 8pt;
+            color: #444444;
+            padding: 2.5mm;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F3 100%);
+            border: 1px solid #FFE5D6;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .tool-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(255, 106, 0, 0.15);
+            border-color: #FF6A00;
+        }
+
+        .tool-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .tool-name {
+            font-size: 7.5pt;
+            line-height: 1.2;
+        }
+
+        .highlights-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlights-list li {
+            font-size: 8.5pt;
+            color: #444444;
+            margin-bottom: 3mm;
+            padding: 2.5mm;
+            padding-left: 3mm;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFFFFF 100%);
+            border-left: 3px solid #FF6A00;
+            position: relative;
+            line-height: 1.5;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Right column sections */
+        .summary {
+            font-size: 9.5pt;
+            color: #444444;
+            line-height: 1.7;
+            text-align: justify;
+            padding: 5mm;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFFFFF 100%);
+            border-left: 4px solid #FF6A00;
+            margin-bottom: 6mm;
+            box-shadow: 0 2px 8px rgba(255, 106, 0, 0.08);
+            position: relative;
+        }
+
+        .summary::before {
+            content: '"';
+            position: absolute;
+            top: 2mm;
+            left: 3mm;
+            font-size: 40pt;
+            color: rgba(255, 106, 0, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .experience-item {
+            margin-bottom: 5mm;
+            padding: 4mm;
+            padding-left: 5mm;
+            background: #FFFFFF;
+            border-left: 3px solid #FF6A00;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5mm;
+            width: 9px;
+            height: 9px;
+            background: #FF6A00;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 0 0 2px #FFE5D6;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 1mm;
+            letter-spacing: 0.3px;
+        }
+
+        .company {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #FF6A00;
+            margin-bottom: 1mm;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .company::after {
+            content: '→';
+            font-size: 12pt;
+            color: #FF6A00;
+        }
+
+        .date-location {
+            font-size: 8pt;
+            color: #999999;
+            margin-bottom: 3mm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .date-location::before {
+            content: '📍';
+            font-size: 9pt;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibilities li {
+            font-size: 9pt;
+            color: #444444;
+            margin-bottom: 2mm;
+            padding-left: 12px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #FF6A00;
+            font-weight: 700;
+        }
+
+        .projects-list {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            gap: 3mm;
+        }
+
+        .project-item {
+            padding: 3mm;
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFFFFF 100%);
+            border-left: 3px solid #FF6A00;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(2px);
+            box-shadow: 0 2px 8px rgba(255, 106, 0, 0.15);
+        }
+
+        .project-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 1mm;
+        }
+
+        .project-type {
+            font-size: 8pt;
+            color: #FF6A00;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: #FFFFFF;
+            }
+            .page {
+                margin: 0;
+                padding: 16mm 18mm;
+                box-shadow: none;
+                background: #FFFFFF;
+            }
+            .container {
+                margin: 0 -18mm;
+                margin-bottom: -16mm;
+            }
+            .left-column {
+                background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+    
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="name">
+                    <span class="name-first">PHAN NGUYỄN</span> <span class="name-highlight">DUY KHA</span>
+                </div>
+                <div class="role">
+                    Media Producer<span class="role-divider">|</span>Videographer<span class="role-divider">|</span>Video Editor<span class="role-divider">|</span>Graphic Designer
+                </div>
+                <div class="contact">
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>Ho Chi Minh City, Vietnam</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <span>0765 570 236</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>duykhafoot@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                    <span>taki.io.vn</span>
+                </div>
+            </div>
+            </div>
+            <img src="../assets/avatar.JPG" alt="Profile Photo" class="profile-photo">
+        </div>
+
+        <!-- Two-column layout -->
+        <div class="container">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Skills Section -->
+                <div class="section">
+                    <div class="section-title">Skills</div>
+                    
+                    <div class="skill-group">
+                        <div class="skill-name">Videography & Photography</div>
+                        <ul class="skill-list">
+                            <li>Event, concert & beauty pageant coverage</li>
+                            <li>Stage, runway & live-show shooting</li>
+                            <li>Camera movement, framing & visual storytelling</li>
+                            <li>Working under complex stage lighting conditions</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-name">Post-production</div>
+                        <ul class="skill-list">
+                            <li>Video editing & basic color correction</li>
+                            <li>Motion titles, lower thirds & transitions</li>
+                            <li>Recap, highlight & short-form video production</li>
+                            <li>Social media formats (Reels, TikTok, Shorts)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-name">Design & UX/UI</div>
+                        <ul class="skill-list">
+                            <li>Branding visuals & digital media assets</li>
+                            <li>Poster, banner & social key visual design</li>
+                            <li>UX/UI design for websites & digital products</li>
+                            <li>Layout systems, typography & brand consistency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tools Section -->
+                <div class="section">
+                    <div class="section-title">Tools</div>
+                    <div class="tools-list">
+                        <div class="tool-item">
+                            <img src="assets/logo_pr.png" alt="Premiere Pro" class="tool-icon">
+                            <span class="tool-name">Premiere Pro</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="assets/logo_ae.png" alt="After Effects" class="tool-icon">
+                            <span class="tool-name">After Effects</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="assets/logo_ps.png" alt="Photoshop" class="tool-icon">
+                            <span class="tool-name">Photoshop</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="assets/logo_lr.png" alt="Lightroom" class="tool-icon">
+                            <span class="tool-name">Lightroom</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="assets/logo_illus.png" alt="Illustrator" class="tool-icon">
+                            <span class="tool-name">Illustrator</span>
+                        </div>
+
+                        <div class="tool-item">
+                            <img src="assets/logo_DaVinci.png" alt="DaVinci Resolve" class="tool-icon">
+                            <span class="tool-name">DaVinci Resolve</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="assets/logo_capcut.webp" alt="CapCut" class="tool-icon">
+                            <span class="tool-name">CapCut</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="assets/logo_ai.jpg" alt="CapCut" class="tool-icon">
+                            <span class="tool-name">AI Tools</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlights Section -->
+                <div class="section">
+                    <div class="section-title">Highlights</div>
+                    <ul class="highlights-list">
+                        <li>Experience working in television production environments</li>
+                        <li>Participation in large-scale concerts and beauty pageants</li>
+                        <li>Strong ability to meet tight deadlines and production schedules</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Professional Summary -->
+                <div class="section">
+                    <div class="section-title">Professional Summary</div>
+                    <div class="summary">
+                        Media Producer with over 3 years of experience in videography, photography, video editing, graphic design, and UX/UI. Experienced in producing content for large-scale events, concerts, beauty pageants, television, KOLs, and corporate media. Able to work independently or within large production teams while maintaining quality and meeting deadlines.
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="section">
+                    <div class="section-title">Experience</div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Media Production</div>
+                        <div class="company">G.W.B MEDIA – KOL Thầy Beo U40</div>
+                        <div class="date-location">Ho Chi Minh City | 11/2023 – Present</div>
+                        <ul class="responsibilities">
+                            <li>Produced and edited video content for KOLs and media campaigns</li>
+                            <li>Filmed and delivered social media video formats with fast turnaround</li>
+                            <li>Ensured visual quality and consistency across published content</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Graphic Designer & Video Editor</div>
+                        <div class="company">SITC Vocational College</div>
+                        <div class="date-location">Ho Chi Minh City | 10/2023 – 10/2024</div>
+                        <ul class="responsibilities">
+                            <li>Designed communication materials for academic and event activities</li>
+                            <li>Edited promotional and recap videos for institutional use</li>
+                            <li>Collaborated with the media team to maintain brand consistency</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Media – Videography / Photography / Editing / Design</div>
+                        <div class="company">University of Management and Technology (UMT)</div>
+                        <div class="date-location">Ho Chi Minh City | 10/2022 – 11/2025</div>
+                        <ul class="responsibilities">
+                            <li>Filmed and photographed major university events</li>
+                            <li>Edited recap and highlight videos for communication purposes</li>
+                            <li>Designed posters, banners, and digital media assets</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Videographer & Photographer Collaborator</div>
+                        <div class="company">Vietnam Television – VTV9</div>
+                        <div class="date-location">Ho Chi Minh City | Project-based</div>
+                        <ul class="responsibilities">
+                            <li>Participated in professional television filming and photography projects</li>
+                            <li>Worked within broadcast production standards and workflows</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">UX/UI Designer</div>
+                        <div class="company">Baby Nutri & Care Pharma</div>
+                        <div class="date-location">Ho Chi Minh City | 01/2022 – 02/2023</div>
+                        <ul class="responsibilities">
+                            <li>Designed UX/UI for company websites and digital products</li>
+                            <li>Collaborated with technical and marketing teams</li>
+                            <li>Improved user experience and interface consistency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects & Events Section -->
+                <div class="section">
+                    <div class="section-title">Projects & Events</div>
+                    <div class="projects-list">
+                        <div class="project-item">
+                            <div class="project-type">Events</div>
+                            <div class="project-title">Large-scale concerts and events</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-type">Beauty Pageants</div>
+                            <div class="project-title">Miss Charm, Miss Cosmo, and related productions</div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-type">Broadcast & Corporate</div>
+                            <div class="project-title">Television and corporate media projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
